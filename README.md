@@ -13,6 +13,7 @@ Built by [Foundation for Puerto Rico](https://foundationforpuertorico.org/) from
 | Skill | Command | Status |
 |-------|---------|--------|
 | **Humanize** | `/humanize` | Available |
+| **Stealth** | `/stealth` | Available |
 | **Deep Research** | `/deepresearch` | Planned |
 | **Literature Review** | `/lit-review` | Planned |
 | **Policy Brief** | `/policy-brief` | Planned |
@@ -25,6 +26,10 @@ Built by [Foundation for Puerto Rico](https://foundationforpuertorico.org/) from
 ### Humanize
 
 Removes AI writing patterns from text. Adapted for English and Spanish, with attention to policy and social science writing conventions. Based on Wikipedia's "Signs of AI writing" and adapted from [blader/humanizer](https://github.com/blader/humanizer).
+
+### Stealth
+
+Reduces AI detection scores by restructuring text for higher perplexity and burstiness. Does NOT change vocabulary — changes sentence length variation, paragraph structure, and predictability patterns. Based on [TempParaphraser (EMNLP 2025)](https://aclanthology.org/2025.emnlp-main.1607/) research. Use after `/humanize` for best results.
 
 ### Deep Research
 
