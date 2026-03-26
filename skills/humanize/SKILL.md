@@ -5,7 +5,11 @@ description: |
   Adapted for policy, social science, and research writing. 30 pattern categories
   including 5 Spanish-specific patterns validated against Claude, GPT, and Gemini
   output. Based on blader/humanizer and Wikipedia's "Signs of AI writing" guide.
-user-invocable: true
+allowed-tools: Read Edit
+license: MIT
+metadata:
+  author: foundationforpuertorico
+  version: "2.0"
 ---
 
 # Humanizer: Remove AI Writing Patterns

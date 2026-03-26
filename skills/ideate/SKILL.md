@@ -6,7 +6,11 @@ description: |
   exploration, and community-centered problem solving. Triggers on: "brainstorm",
   "ideate", "ideas", "think big", "how might we", "explore options", "lluvia de
   ideas", "ideación", "pensemos opciones", "ayúdame a pensar".
-user-invocable: true
+allowed-tools: Read
+license: MIT
+metadata:
+  author: foundationforpuertorico
+  version: "1.0"
 ---
 
 # Ideate — Structured Creative Thinking for Policy & Social Impact

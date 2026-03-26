@@ -5,7 +5,11 @@ description: |
   perplexity and burstiness. Separate from /humanize which fixes surface
   patterns for human readers. This skill targets statistical detection models
   like GPTZero. Based on TempParaphraser (EMNLP 2025) research.
-user-invocable: true
+allowed-tools: Read Edit
+license: MIT
+metadata:
+  author: foundationforpuertorico
+  version: "1.0"
 ---
 
 # Stealth: Reduce AI Detection Scores

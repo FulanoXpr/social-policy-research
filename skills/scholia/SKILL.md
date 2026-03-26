@@ -7,7 +7,11 @@ description: |
   "is this argument solid", "what's missing", "is it ready to share",
   "critical review", "revisa este documento", "¿se sostiene?",
   "¿está listo?", "scholia review".
-user-invocable: true
+allowed-tools: Read Grep Glob
+license: MIT
+metadata:
+  author: foundationforpuertorico
+  version: "1.0"
 ---
 
 # Scholia — Critical Appraisal of Documents

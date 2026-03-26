@@ -6,7 +6,11 @@ description: |
   evidence. Triggers on: "compare", "comparison", "side by side",
   "how do these differ", "which is better", "compara", "comparación",
   "diferencias entre", "cuál es mejor", "matriz comparativa".
-user-invocable: true
+allowed-tools: Read Grep Glob
+license: MIT
+metadata:
+  author: foundationforpuertorico
+  version: "1.0"
 ---
 
 # Compare — Structured Comparison Matrices
