@@ -1,18 +1,11 @@
 ---
 name: humanize
-version: 2.0.0
 description: |
   Remove signs of AI-generated writing from text. Works in English and Spanish.
   Adapted for policy, social science, and research writing. 30 pattern categories
   including 5 Spanish-specific patterns validated against Claude, GPT, and Gemini
   output. Based on blader/humanizer and Wikipedia's "Signs of AI writing" guide.
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Grep
-  - Glob
-  - AskUserQuestion
+user-invocable: true
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -29,7 +22,7 @@ Based on [blader/humanizer](https://github.com/blader/humanizer) and Wikipedia's
 4. Perform a self-audit: ask "What still makes this sound AI-generated?" and fix it.
 5. Present the final version with a brief summary of changes.
 
-Work in the language of the input. If Spanish, rewrite in Spanish. If English, in English.
+Work in the language of the input. If Spanish, rewrite in Spanish. If English, in English. For mixed-language documents (both EN and ES in the same text), preserve the language of each section — do not translate, only humanize within each language.
 
 ## Personality and Soul
 

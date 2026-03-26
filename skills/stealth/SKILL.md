@@ -1,18 +1,11 @@
 ---
 name: stealth
-version: 1.0.0
 description: |
   Reduce AI detection scores by manipulating sentence structure for higher
   perplexity and burstiness. Separate from /humanize which fixes surface
   patterns for human readers. This skill targets statistical detection models
   like GPTZero. Based on TempParaphraser (EMNLP 2025) research.
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Grep
-  - Glob
-  - AskUserQuestion
+user-invocable: true
 ---
 
 # Stealth: Reduce AI Detection Scores
@@ -111,7 +104,7 @@ Pick whichever breaks the rhythm of the surrounding sentences.
 
 ## Process
 
-1. Read the input text.
+1. Read the input text. Work in the language of the input.
 2. Analyze current sentence length distribution. Flag any run of 3+ sentences in the same length category.
 3. Rewrite applying Steps 1-4.
 4. Verify the rewrite has:
@@ -121,6 +114,18 @@ Pick whichever breaks the rhythm of the surrounding sentences.
    - At least one question per 400 words
    - At least one paragraph of 1-2 sentences
 5. Present the rewrite.
+
+**For short texts (under 200 words):** Relax the thresholds proportionally. Focus on sentence length variation (the strongest signal) and skip the question/fragment quotas. Even varying 3-4 sentences makes a difference on short text.
+
+## Output Format
+
+Present the rewrite inline in the conversation with:
+
+1. **Restructured text** — the rewritten version
+2. **Burstiness check** — sentence length sequence (e.g., "S-L-F-M-L-S-M") showing variation achieved
+3. **Changes summary** — 2-3 bullets on what structural changes were made
+
+If the user provides a file path, read the file with the Read tool, present the rewrite inline, and offer to apply changes with the Edit tool.
 
 ## What This Skill Does NOT Do
 

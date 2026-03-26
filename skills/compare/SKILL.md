@@ -1,21 +1,12 @@
 ---
 name: compare
-version: 1.0.0
 description: |
   Side-by-side comparison matrices for policies, communities, programs,
   data sources, or approaches. Produces structured tables with sourced
   evidence. Triggers on: "compare", "comparison", "side by side",
   "how do these differ", "which is better", "compara", "comparación",
   "diferencias entre", "cuál es mejor", "matriz comparativa".
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Grep
-  - Glob
-  - AskUserQuestion
-  - WebSearch
-  - WebFetch
+user-invocable: true
 ---
 
 # Compare — Structured Comparison Matrices
@@ -152,6 +143,13 @@ Suggested dimensions:
 - Interoperability with other sources
 
 ---
+
+## Edge Cases
+
+- **7+ items:** Warn the user that more than 6 items makes the matrix unreadable. Suggest splitting into two comparisons or grouping items into categories.
+- **Output language:** Produce the matrix in the language the user used to ask. If they asked in Spanish, the matrix and synthesis are in Spanish.
+- **Missing data for most cells:** If an item has data for fewer than half the dimensions, flag it as "insufficient data for meaningful comparison" and suggest removing it or narrowing the dimensions.
+- **Trivial or identical items:** If items are effectively the same, say so directly instead of producing a matrix of identical cells.
 
 ## Behavioral Guidelines
 

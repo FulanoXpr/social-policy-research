@@ -1,19 +1,12 @@
 ---
 name: ideate
-version: 1.0.0
 description: |
   Structured creative ideation using the GPS (Goal-Prompt-Strategy) framework
   with 12 innovation strategies. For policy design, program planning, strategic
   exploration, and community-centered problem solving. Triggers on: "brainstorm",
   "ideate", "ideas", "think big", "how might we", "explore options", "lluvia de
   ideas", "ideación", "pensemos opciones", "ayúdame a pensar".
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Grep
-  - Glob
-  - AskUserQuestion
+user-invocable: true
 ---
 
 # Ideate — Structured Creative Thinking for Policy & Social Impact

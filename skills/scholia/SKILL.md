@@ -1,22 +1,13 @@
 ---
 name: scholia
-version: 1.0.0
 description: |
   Critical appraisal of documents before distribution. Evaluates logic,
   evidence quality, argument structure, and identifies gaps. Not style
-  editing — substance review. Use when someone asks to review a draft,
-  appraise an argument, or check if a document is ready to share.
-  Works in English and Spanish. Triggers on: "review this document",
+  editing — substance review. Triggers on: "review this document",
   "is this argument solid", "what's missing", "is it ready to share",
   "critical review", "revisa este documento", "¿se sostiene?",
   "¿está listo?", "scholia review".
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Grep
-  - Glob
-  - AskUserQuestion
+user-invocable: true
 ---
 
 # Scholia — Critical Appraisal of Documents
@@ -191,9 +182,17 @@ Quick commands the user can invoke:
 
 ---
 
+## Edge Cases
+
+- **No document provided:** If the user says "review this" but provides no text or file, ask for it before proceeding.
+- **Short text (under 200 words):** Produce an abbreviated Scholium — skip the full template and give 3-5 bullet points of critical findings.
+- **Non-prose input (tables, slides, bullet lists):** Focus on logic and claims within the content. Skip structural coherence analysis.
+- **Audience not matching any lens:** Use the closest lens, or apply general critical thinking without a specific lens. Note which lens you used.
+- **Mixed-language document:** Produce the Scholium in the dominant language of the document.
+
 ## Workflow
 
-1. **Receive the document** — DOCX uploaded, text pasted, or file path provided
+1. **Receive the document** — DOCX uploaded, text pasted, or file path provided. If none given, ask.
 2. **Identify the audience** — ask the user if not clear from context
 3. **SIFT** — read the full document before starting scrutiny
 4. **SCRUTINIZE** — with the appropriate audience lens
